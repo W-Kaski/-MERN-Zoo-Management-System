@@ -6,11 +6,11 @@ import {
   Navigate,
 } from "react-router-dom";
 import { useSelector } from "react-redux";
-import AdminDashboard from "./components/AdminDashboard";
-import ZookeeperDashboard from "./components/ZookeeperDashboard";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import ZookeeperDashboard from "./pages/zookeeper/ZookeeperDashboard";
 import LoginPage from "./pages/LoginPage";
-import AdminRegister from "./pages/admin/AdminRegister";
-import ZookeeperRegister from "./pages/zookeeper/ZookeeperRegister";
+import AdminRegister from "./pages/admin/AdminRegisterPage";
+import ZookeeperRegister from "./pages/zookeeper/ZookeeperRegisterPage";
 import ChooseUser from "./pages/ChooseUser";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         </Routes>
       )}
 
-      {currentRole === "Admin" && (
+      {currentRole === "Admin" && ( 
         <>
           <Route path="/AdminDashboard" element={<AdminDashboard />} />
         </>

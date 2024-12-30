@@ -1,11 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { zookeeperReducer } from "./zookeeperRelated/ZooKeeperSlice";
-import { complainReducer } from "./complaintRelated/ComplaintSlice";
+
+
+import zookeeperReducer from "./zookeeperRelated/ZookeeperSlice";
+import complaintReducer from "./complaintRelated/ComplaintSlice";
+
+
 
 const store = configureStore({
   reducer: {
     zookeeper: zookeeperReducer,
-    complain: complainReducer,
+    complaint: complaintReducer,
   },
 });
 

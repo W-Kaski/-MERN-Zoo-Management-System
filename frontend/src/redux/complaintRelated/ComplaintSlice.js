@@ -5,9 +5,23 @@ const initialState = {};
 const complaintSlice = createSlice({
   name: "complaint",
   initialState,
-  reducers: {},
+    reducers: {
+      createComplaint: (state, action) => {
+        state[action.payload.id] = action.payload;
+      },
+      updateComplaint: (state, action) => {
+        state[action.payload.id] = action.payload;
+      },
+      deleteComplaint: (state, action) => {
+        delete state[action.payload];
+      },
+  },
 });
 
-export const {} = complainSlice.actions;
+export const {
+    createComplaint,
+    updateComplaint,
+    deleteComplaint,
+  } = complaintSlice.actions;
 
-export const complainReducer = complainSlice.reducer;
+export default complaintSlice.reducer;
