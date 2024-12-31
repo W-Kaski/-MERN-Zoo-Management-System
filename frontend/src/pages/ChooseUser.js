@@ -15,8 +15,8 @@ const ChooseUser = () => {
     const {status, currentUser, currentRole} = useSelector(state => state.user);
 
     // const [loader, setLoader] = useState(false)
-    const [message, setMessage] = useState("");
     // const [showPopup, setShowPopup] = useState(false);
+    const [message, setMessage] = useState("");
 
     const navigateHandler = (user) => {
         if (user === 'Admin') {
@@ -44,7 +44,7 @@ const ChooseUser = () => {
     }, [status, currentUser, currentRole, navigate]);
 
     return (
-        <Container maxWidth="sm">
+        <Container>
             <Box textAlign="center" mb={4}>
                 <Typography variant="h4" fontWeight="bold">
                     Welcome to Zoo Management System

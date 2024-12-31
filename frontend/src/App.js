@@ -21,8 +21,8 @@ const App = () => {
             {currentRole === null && (
                 <Routes>
                     <Route path="/" element={<ChooseUser/>}/>
-                    <Route path="/AdminLogin" element={<LoginPage/>}/>
-                    <Route path="/ZookeeperLogin" element={<LoginPage/>}/>
+                    <Route path="/AdminLogin" element={<LoginPage role="Admin"/>}/>
+                    <Route path="/ZookeeperLogin" element={<LoginPage role="Zookeeper"/>}/>
                     <Route path="/Register" element={<RegisterPage/>}/>
                     <Route path="/AdminRegister" element={<AdminRegister/>}/>
                     <Route path="/ZookeeperRegister" element={<ZookeeperRegister/>}/>
