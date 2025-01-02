@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {useSelector} from "react-redux";
 
 const initialState = {
     status: 'idle',
@@ -15,6 +16,29 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
+        tempSetUser: (state, action) => {
+            state.status = 'success';
+            state.currentUser = {
+                name: "Zookeeper1",
+                zooName: "Zoo1",
+                ID: 123,
+                email: "zookeeper@mail.com",
+                password: 123456,
+                role: "Zookeeper",
+                assignedVenue: "Venue1",
+                assignedSpecies: "Lions",
+                completedTasks: 0,
+                zookeeperTasks: 10,
+                monthlyWarning: 0,
+                monthlySalary: 3000
+            }
+            state.currentRole = "Zookeeper";
+            localStorage.setItem('user', JSON.stringify(action.payload));
+            state.response = null;
+            state.error = null;
+            console.log("all set")
+            console.log("user:",state.currentUser, "\nrole:",state.currentRole)
+        },
         authRequest: (state) => {
             state.status = 'loading';
         },
@@ -44,6 +68,7 @@ const userSlice = createSlice({
 });
 
 export const {
+    tempSetUser,
     authRequest,
     authSuccess,
     authFailed,

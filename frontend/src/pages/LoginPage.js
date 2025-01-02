@@ -2,7 +2,7 @@ import {Box, Button, Container, TextField, Typography} from "@mui/material";
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {loginUser} from "../redux/userRelated/userHandle";
+import {loginUser, registerUser} from "../redux/userRelated/userHandle";
 
 const LoginPage = ({role}) => {
     const dispatch = useDispatch()

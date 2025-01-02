@@ -26,19 +26,20 @@ const App = () => {
                     <Route path="/Register" element={<RegisterPage/>}/>
                     <Route path="/AdminRegister" element={<AdminRegister/>}/>
                     <Route path="/ZookeeperRegister" element={<ZookeeperRegister/>}/>
+                    {/*<Route path="/Zookeeper" element={<ZookeeperDashboard/>}/> /!*temp*!/*/}
                     <Route path="*" element={<Navigate to="/"/>}/>
                 </Routes>
             )}
 
             {currentRole === "Admin" && (
                 <>
-                    <Route path="/Admin/Dashboard" element={<AdminDashboard/>}/>
+                    <AdminDashboard/>
                 </>
             )}
 
             {currentRole === "Zookeeper" && (
                 <>
-                    <Route path="/Zookeeper/Dashboard" element={<ZookeeperDashboard/>}/>
+                    <ZookeeperDashboard/>
                 </>
             )}
         </Router>
