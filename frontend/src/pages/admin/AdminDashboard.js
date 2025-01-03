@@ -43,7 +43,7 @@ const AdminDashboard = () => {
             Admin Dashboard
           </Typography>
 
-          <AccountMenu />
+  
         </Toolbar>
       </AppBar>
 
