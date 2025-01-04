@@ -8,7 +8,7 @@ import {
     Button,
 } from '@mui/material';
 
-const ChooseUser = () => {
+const RegisterPage = () => {
     // const dispatch = useDispatch()
     const navigate = useNavigate()
     const {status, currentUser, currentRole} = useSelector(state => state.user);
@@ -19,10 +19,10 @@ const ChooseUser = () => {
 
     const navigateHandler = (user) => {
         if (user === 'Admin') {
-            navigate('/AdminLogin')
+            navigate('/AdminRegister')
 
         } else if (user === 'Zookeeper') {
-            navigate('/ZookeeperLogin')
+            navigate('/ZookeeperRegister')
         }
     }
 
@@ -46,7 +46,7 @@ const ChooseUser = () => {
         <Container>
             <Box textAlign="center" mb={4}>
                 <Typography variant="h4" fontWeight="bold">
-                    Welcome to Zoo Management System
+                    Please Choose the Account You Would Like to Create
                 </Typography>
             </Box>
 
@@ -58,7 +58,7 @@ const ChooseUser = () => {
                     sx={{borderRadius: '20px', textTransform: 'none'}}
                     onClick={() => navigateHandler('Admin')}
                 >
-                    Login as Admin
+                    Register Admin Account
                 </Button>
                 <Button
                     variant="contained"
@@ -67,25 +67,25 @@ const ChooseUser = () => {
                     sx={{borderRadius: '20px', textTransform: 'none'}}
                     onClick={() => navigateHandler('Zookeeper')}
                 >
-                    Login as Zookeeper
+                    Register Zookeeper Account
                 </Button>
             </Box>
 
             <Box display="flex" justifyContent="center" alignItems="center">
                 <Typography variant="body2" mr={1}>
-                    Don't have an account?
+                    Already have an account?
                 </Typography>
                 <Typography
                     variant="body2"
                     color="primary"
                     sx={{cursor: 'pointer', fontWeight: 'bold'}}
-                    onClick={() => navigate('/Register')}
+                    onClick={() => navigate('/')}
                 >
-                    Sign up
+                    Login
                 </Typography>
             </Box>
         </Container>
     );
 };
 
-export default ChooseUser;
+export default RegisterPage;
