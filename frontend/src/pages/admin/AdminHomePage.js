@@ -1,4 +1,17 @@
 import { Container, Box, Paper } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllZookeepers } from "../../redux/zookeeperRelated/zookeeperHandle";
+import { getAllVenues } from "../../redux/venueRelated/venueHandle";
+import { getAllAnimals } from "../../redux/animalRelated/animalHandle";
+import { getAllFinances } from "../../redux/financeRelated/financeHandle";
+
+import Zookeepers from "../../assets/images/Zookeeper.png";
+import Venues from "../../assets/images/Venue.png";
+import Animals from "../../assets/images/Animal.png";
+import Finance from "../../assets/images/Finance.png";
+import { useEffect } from "react";
+import styled from "styled-components";
+import CountUp from "react-countup";
 
 const AdminHomePage = () => {
   const dispatch = useDispatch();
@@ -53,11 +66,6 @@ const AdminHomePage = () => {
             <Title>Finance</Title>
             <Data start={0} end={numberOfFinances} duration={2.5} prefix="$" />
           </StyledPaper>
-        </Box>
-        <Box width="100%">
-          <Paper sx={{ p: 2 }}>
-            <SeeNotice />
-          </Paper>
         </Box>
       </Box>
     </Container>

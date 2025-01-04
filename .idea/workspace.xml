@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb8fc19b-6030-42e5-a154-ffc3345e7dfd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/admin/AdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/admin/AdminDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/admin/AdminHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/admin/AdminHomePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/RegisterPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/redux/userRelated/userHandle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/redux/userRelated/userSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ChooseUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ChooseUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/admin/AdminRegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/admin/AdminRegisterPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/zookeeper/ZookeeperRegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/zookeeper/ZookeeperRegisterPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/setupTests.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +50,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature-adminPages",
+    "git-widget-placeholder": "Merging feature-adminPages",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Computer/Github repo/Zoo/MERN-Zoo-Management-System",
     "node.js.detected.package.eslint": "true",
@@ -67,6 +79,7 @@
       <updated>1735673199628</updated>
       <workItem from="1735673200697" duration="1382000" />
       <workItem from="1735846038079" duration="113000" />
+      <workItem from="1736001436673" duration="336000" />
     </task>
     <servers />
   </component>

@@ -31,15 +31,15 @@ const App = () => {
             )}
 
             {currentRole === "Admin" && (
-                <>
+                <Routes>
                     <Route path="/Admin/Dashboard" element={<AdminDashboard/>}/>
-                </>
+                </Routes>
             )}
 
             {currentRole === "Zookeeper" && (
-                <>
+                <Routes>
                     <Route path="/Zookeeper/Dashboard" element={<ZookeeperDashboard/>}/>
-                </>
+                </Routes>
             )}
         </Router>
     );

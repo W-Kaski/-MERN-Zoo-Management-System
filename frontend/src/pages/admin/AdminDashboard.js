@@ -1,17 +1,28 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
 import AdminSideBar from "./AdminSideBar";
+import { CssBaseline, Toolbar } from "@mui/material";
+import { Routes, Route } from "react-router-dom";
+import AdminHomePage from "./AdminHomePage";
 
 const AdminDashboard = () => {
-  const [open, setOpen] = useState(false);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
 
   return (
-    <Box>
-      <AdminSideBar />
-    </Box>
+    <>
+      <Box>
+        <CssBaseline />
+        <AdminSideBar />
+
+
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <Toolbar />
+          <Routes>
+            <Route path="/" element={<AdminHomePage />} />
+            <Route path="/Admin/dashboard" element={<AdminHomePage />} />
+          </Routes>
+        </Box>
+      </Box>
+    </>
   );
 };
 
