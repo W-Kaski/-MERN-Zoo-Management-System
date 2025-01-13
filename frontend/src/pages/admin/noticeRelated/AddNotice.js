@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {addStuff} from '../../../redux/userRelated/userHandle';
 import {underControl} from '../../../redux/userRelated/userSlice';
-import {Button, CircularProgress, Paper, TextField, Typography} from '@mui/material';
+import {Button, Paper, TextField, Typography} from '@mui/material';
 
 const AddNotice = () => {
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const AddNotice = () => {
     const adminID = currentUser._id
 
     const [loader, setLoader] = useState(false);
-    // const [showPopup, setShowPopup] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
     const [message, setMessage] = useState("");
 
     const fields = {title, details, date, adminID};
@@ -26,14 +26,16 @@ const AddNotice = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const now = new Date();
-        const formattedDate = `${now.getFullYear()}-${(now.getMonth() + 1)
-            .toString()
-            .padStart(2, "0")}-${now.getDate().toString().padStart(2, "0")}`;
-        setDate(formattedDate);
+        // const now = new Date();
+        // const formattedDate = `${now.getFullYear()}-${(now.getMonth() + 1)
+        //     .toString()
+        //     .padStart(2, "0")}-${now.getDate().toString().padStart(2, "0")}`;
+        // setDate(formattedDate);
+        setDate(Date());
 
         setLoader(true);
         dispatch(addStuff(fields, address));
+        console.log("added");
     };
 
     useEffect(() => {
@@ -42,8 +44,8 @@ const AddNotice = () => {
             dispatch(underControl())
         } else if (status === 'error') {
             setMessage("Network Error")
-            // setShowPopup(true)
-            // setLoader(false)
+            setShowPopup(true)
+            setLoader(false)
         }
     }, [status, navigate, error, response, dispatch]);
 
@@ -80,10 +82,10 @@ const AddNotice = () => {
                 fullWidth
                 multiline
                 rows={4}
-                value={detail}
+                value={details}
                 onChange={(e) => setDetails(e.target.value)}
-                error={!detail && error}
-                helperText={!detail && error ? "Detail is required" : ""}
+                error={!details && error}
+                helperText={!details && error ? "Detail is required" : ""}
             />
 
             <Button

@@ -16,6 +16,7 @@ import ChooseUser from "./pages/ChooseUser";
 
 const App = () => {
     const {currentRole} = useSelector(state => state.user);
+    localStorage.clear();  // temp
     return (
         <Router>
             {currentRole === null && (

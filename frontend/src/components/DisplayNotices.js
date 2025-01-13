@@ -13,9 +13,10 @@ const DisplayNotices = () => {
 
     useEffect(() => {
         if (currentRole === "Admin") {
+            console.log("currentUser id: ", currentUser._id)
             dispatch(getAllNotices(currentUser._id, "Notice"));
         } else {
-            // dispatch(getAllNotices(currentUser.zooName._id, "Notice"));
+            dispatch(getAllNotices(currentUser.zoo._id, "Notice"));
         }
     }, [dispatch]);
 
