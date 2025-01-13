@@ -6,7 +6,13 @@ const initialState = {
             id: 1,
             title: "notice trial",
             detail: "this is the content of the notice",
-            date: Date("2025-01-01")
+            date: "2025-01-02"
+        },
+        {
+            id: 2,
+            title: "another trial",
+            detail: "something is here",
+            date: "2025-01-03"
         }
     ],
     loading: false,

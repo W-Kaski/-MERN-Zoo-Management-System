@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import {getAllNotices} from '../redux/noticeRelated/noticeHandle';
-import {Box, CircularProgress, List, ListItem, ListItemText, Typography} from '@mui/material';
+import {Box, Button, CircularProgress, List, ListItem, ListItemText, Typography} from '@mui/material';
 import {useNavigate} from "react-router-dom";
 
 const DisplayNotices = () => {
@@ -61,9 +61,6 @@ const DisplayNotices = () => {
             {!loading && noticeList.length > 0 && (
                 <List>
                     {noticeList.map((notice) => {
-                        const date = new Date(notice.date);
-                        const dateString = date.toString() !== "Invalid Date" ? date.toISOString().substring(0, 10) : "Invalid Date";
-
                         return (
                             <ListItem
                                 // key={notice._id}
@@ -79,12 +76,11 @@ const DisplayNotices = () => {
                                         backgroundColor: "#f1f1f1",
                                     },
                                 }}
-                                // onClick={() => handleNoticeClick(notice._id)}
-                                onClick={() => handleNoticeClick(1)}
+                                onClick={() => handleNoticeClick(notice._id)}
                             >
                                 <ListItemText primary={notice.title} sx={{maxWidth: "70%"}}/>
                                 <Typography variant="body2" color="text.secondary">
-                                    {dateString}
+                                    {notice.date}
                                 </Typography>
                             </ListItem>
                         );
@@ -98,6 +94,16 @@ const DisplayNotices = () => {
                     No notices available at the moment.
                 </Typography>
             )}
+
+            {/*Edit Notice*/}
+            {currentRole === "Admin" ? (
+            <Button variant="contained"
+                    color="primary"
+                    sx={{marginTop: "20px", display: "block", margin: "auto"}}
+                    onClick={() => navigate("/Admin/addnotice")}>
+                Add Notice
+            </Button>
+            ) : null}
         </Box>
     );
 }

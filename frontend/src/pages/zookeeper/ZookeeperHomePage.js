@@ -14,7 +14,7 @@ const ZookeeperHomePage = () => {
     const numberOfCompletedTasks = currentUser && currentUser.completedTasks;
     const numberOfAvailableTasks = currentUser && currentUser.assignedVenue;
     const monthlySalary = currentUser && currentUser.monthlySalary;
-
+console.log(currentUser)
     return (
         <Box sx={{padding: 3}}>
             <Typography variant="h4" gutterBottom>
