@@ -54,12 +54,12 @@ const ZookeeperDashboard = () => {
                 <Drawer variant="permanent" open={open} sx={open ? styles.drawerStyled : styles.hideDrawer}>
                     <Toolbar sx={styles.toolBarStyled}>
                         <IconButton onClick={toggleDrawer}>
-                            <ChevronLeftIcon />
+                            <ChevronLeftIcon/>
                         </IconButton>
                     </Toolbar>
-                    <Divider />
+                    <Divider/>
                     <List component="nav">
-                        <ZookeeperSideBar />
+                        <ZookeeperSideBar/>
                     </List>
                 </Drawer>
                 <Box component="main" sx={styles.boxStyled}>
@@ -69,9 +69,10 @@ const ZookeeperDashboard = () => {
                         <Route path='*' element={<Navigate to="/"/>}/>
                         <Route path="/Zookeeper/dashboard" element={<ZookeeperHomePage/>}/>
                         <Route path="/Zookeeper/profile" element={<ZookeeperProfile/>}/>
-                        <Route path="/Zookeeper/notice" element={<DisplayNotices/>}/>
-                        {/*<Route path="/Zookeeper/notice/:id" element={<NoticeDetail/>}/>*/}
-                        <Route path="/Zookeeper/notice/1" element={<NoticeDetail/>}/>
+
+                        {/* Notice */}
+                        {/*<Route path="/Zookeeper/notices" element={<DisplayNotices/>}/>*/}
+                        <Route path="/Zookeeper/notice/:id" element={<NoticeDetail/>}/>
                     </Routes>
                 </Box>
             </Box>

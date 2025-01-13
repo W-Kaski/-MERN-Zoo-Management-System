@@ -26,7 +26,8 @@ const App = () => {
                     <Route path="/Register" element={<RegisterPage/>}/>
                     <Route path="/AdminRegister" element={<AdminRegister/>}/>
                     <Route path="/ZookeeperRegister" element={<ZookeeperRegister/>}/>
-                    {/*<Route path="/Zookeeper" element={<ZookeeperDashboard/>}/> /!*temp*!/*/}
+                    {/*<AdminDashboard/>*/}
+                    {/*<ZookeeperDashboard/>*/}
                     <Route path="*" element={<Navigate to="/"/>}/>
                 </Routes>
             )}

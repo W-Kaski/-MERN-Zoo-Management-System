@@ -54,7 +54,7 @@ const AdminSideBar = () => {
               }
             />
           </ListItemIcon>
-          <ListItemText primary="Zookeeper Management" />
+          <ListItemText primary="Zookeeper" />
         </ListItemButton>
 
         {/* Venue Management - Controls venue related operations */}
@@ -68,7 +68,7 @@ const AdminSideBar = () => {
               }
             />
           </ListItemIcon>
-          <ListItemText primary="Venue Management" />
+          <ListItemText primary="Venue" />
         </ListItemButton>
 
         {/* Animal Management - Handles animal related tasks */}
@@ -82,21 +82,21 @@ const AdminSideBar = () => {
               }
             />
           </ListItemIcon>
-          <ListItemText primary="Animal Management" />
+          <ListItemText primary="Animal" />
         </ListItemButton>
 
         {/* Notification Management - Controls system notifications */}
-        <ListItemButton component={Link} to="/admin/notification">
+        <ListItemButton component={Link} to="/admin/notices">
           <ListItemIcon>
             <AnnouncementOutlinedIcon
               color={
-                location.pathname.startsWith("/admin/notification")
+                location.pathname.startsWith("/admin/notices")
                   ? "primary"
                   : "inherit"
               }
             />
           </ListItemIcon>
-          <ListItemText primary="Notification Management" />
+          <ListItemText primary="Notices" />
         </ListItemButton>
 
         {/* Complaint Management - Handles user complaints */}
@@ -110,7 +110,7 @@ const AdminSideBar = () => {
               }
             />
           </ListItemIcon>
-          <ListItemText primary="Complaint Management" />
+          <ListItemText primary="Complaint" />
         </ListItemButton>
       </React.Fragment>
 
