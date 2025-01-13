@@ -1,8 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {useSelector} from "react-redux";
 
+// localStorage.clear();  // temp
+
 const initialState = {
-    status: 'idle',
+    status: 'idle',  // idle, loading, success, added, failed, error
     userDetails: [],
     tempDetails: [],
     loading: false,
@@ -18,26 +20,17 @@ const userSlice = createSlice({
     reducers: {
         tempSetUser: (state, action) => {
             state.status = 'success';
-            state.currentUser = {
-                name: "Zookeeper1",
-                zooName: "Zoo1",
-                ID: 123,
-                email: "zookeeper@mail.com",
-                password: 123456,
-                role: "Zookeeper",
-                assignedVenue: "Venue1",
-                assignedSpecies: "Lions",
-                completedTasks: 0,
-                zookeeperTasks: 10,
-                monthlyWarning: 0,
-                monthlySalary: 3000
-            }
-            state.currentRole = "Zookeeper";
+            state.currentRole = action.payload.role;
+            state.currentUser = action.payload.fields;
+
+            console.log(action[1])
+            console.log(state.currentRole)
+            console.log(action[0])
+            console.log(state.currentUser)
+
             localStorage.setItem('user', JSON.stringify(action.payload));
             state.response = null;
             state.error = null;
-            console.log("all set")
-            console.log("user:",state.currentUser, "\nrole:",state.currentRole)
         },
         authRequest: (state) => {
             state.status = 'loading';
@@ -58,11 +51,21 @@ const userSlice = createSlice({
             state.status = 'error';
             state.error = action.payload;
         },
+        addStuff: (state, action) => {
+            state.status = 'added';
+            state.response = null;
+            state.error = null;
+            state.tempDetails = action.payload;
+        },
         stuffAdded: (state, action) => {
             state.status = 'added';
             state.response = null;
             state.error = null;
             state.tempDetails = action.payload;
+        },
+        underControl: (state) => {
+            state.status = 'idle';
+            state.response = null;
         },
     },
 });
@@ -73,7 +76,9 @@ export const {
     authSuccess,
     authFailed,
     authError,
-    stuffAdded
+    addStuff,
+    stuffAdded,
+    underControl
 } = userSlice.actions;
 
 export const userReducer = userSlice.reducer;
