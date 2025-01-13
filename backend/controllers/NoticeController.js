@@ -4,7 +4,7 @@ const noticeCreate = async (req, res) => {
     try {
         const notice = new Notice({
             ...req.body,
-            school: req.body.adminID
+            zoo: req.body.adminID
         })
         const result = await notice.save()
         res.send(result)
@@ -15,7 +15,7 @@ const noticeCreate = async (req, res) => {
 
 const noticeList = async (req, res) => {
     try {
-        let notices = await Notice.find({ school: req.params.id })
+        let notices = await Notice.find({ zoo: req.params.id })
         if (notices.length > 0) {
             res.send(notices)
         } else {
@@ -48,7 +48,7 @@ const deleteNotice = async (req, res) => {
 
 const deleteNotices = async (req, res) => {
     try {
-        const result = await Notice.deleteMany({ school: req.params.id })
+        const result = await Notice.deleteMany({ zoo: req.params.id })
         if (result.deletedCount === 0) {
             res.send({ message: "No notices found to delete" })
         } else {

@@ -13,7 +13,7 @@ const noticeSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    zooName: {
+    zoo: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'admin'
     },
