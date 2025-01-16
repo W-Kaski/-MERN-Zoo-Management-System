@@ -1,8 +1,9 @@
-import {Box, Button, Container, TextField, Typography} from "@mui/material";
+import {Box, Button, CircularProgress, Container, TextField, Typography} from "@mui/material";
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {loginUser, registerUser} from "../redux/userRelated/userHandle";
+import {loginUser} from "../redux/userRelated/userHandle";
+import Popup from "../components/Popup";
 
 const LoginPage = ({role}) => {
     const dispatch = useDispatch()
@@ -103,6 +104,8 @@ const LoginPage = ({role}) => {
                     variant="outlined"
                     fullWidth
                     required
+                    error={emailError}
+                    helperText={emailError && 'Email is required'}
                     onChange={handleInputChange}
                     sx={{borderRadius: "10px"}}
                 />
@@ -114,6 +117,8 @@ const LoginPage = ({role}) => {
                         variant="outlined"
                         fullWidth
                         required
+                        error={IDError}
+                        helperText={IDError && 'Zookeeper ID is required'}
                         onChange={handleInputChange}
                         sx={{borderRadius: "10px"}}
                     />
@@ -126,6 +131,8 @@ const LoginPage = ({role}) => {
                     type="password"
                     fullWidth
                     required
+                    error={passwordError}
+                    helperText={passwordError && 'Password is required'}
                     onChange={handleInputChange}
                     sx={{borderRadius: "10px"}}
                 />
@@ -137,7 +144,9 @@ const LoginPage = ({role}) => {
                     sx={{borderRadius: "20px", textTransform: "none"}}
                     type="submit"
                 >
-                    Login
+                    {loader ?
+                        <CircularProgress size={24} color="inherit"/>
+                        : "Login"}
                 </Button>
             </Box>
 
@@ -160,6 +169,7 @@ const LoginPage = ({role}) => {
                     Sign up
                 </Typography>
             </Box>
+            <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
         </Container>
     )
 }

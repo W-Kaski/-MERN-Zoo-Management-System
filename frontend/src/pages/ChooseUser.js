@@ -9,12 +9,11 @@ import {
 } from '@mui/material';
 
 const ChooseUser = () => {
-    // const dispatch = useDispatch()
     const navigate = useNavigate()
     const {status, currentUser, currentRole} = useSelector(state => state.user);
 
-    // const [loader, setLoader] = useState(false)
-    // const [showPopup, setShowPopup] = useState(false);
+    const [loader, setLoader] = useState(false)
+    const [showPopup, setShowPopup] = useState(false);
     const [message, setMessage] = useState("");
 
     const navigateHandler = (user) => {
@@ -36,9 +35,9 @@ const ChooseUser = () => {
             }
 
         } else if (status === 'error') {
-            // setLoader(false)
+            setLoader(false)
             setMessage("Network Error")
-            // setShowPopup(true)
+            setShowPopup(true)
         }
     }, [status, currentUser, currentRole, navigate]);
 

@@ -18,20 +18,20 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        tempSetUser: (state, action) => {
-            state.status = 'success';
-            state.currentRole = action.payload.role;
-            state.currentUser = action.payload.fields;
-
-            console.log(action[1])
-            console.log(state.currentRole)
-            console.log(action[0])
-            console.log(state.currentUser)
-
-            localStorage.setItem('user', JSON.stringify(action.payload));
-            state.response = null;
-            state.error = null;
-        },
+        // tempSetUser: (state, action) => {
+        //     state.status = 'success';
+        //     state.currentRole = action.payload.role;
+        //     state.currentUser = action.payload.fields;
+        //
+        //     console.log(action[1])
+        //     console.log(state.currentRole)
+        //     console.log(action[0])
+        //     console.log(state.currentUser)
+        //
+        //     localStorage.setItem('user', JSON.stringify(action.payload));
+        //     state.response = null;
+        //     state.error = null;
+        // },
         authRequest: (state) => {
             state.status = 'loading';
         },
